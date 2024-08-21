@@ -12,7 +12,7 @@ model Story {
   judul     String   @db.VarChar(255)
   penulis   String   @db.VarChar(255)
   sinopsis  String
-  sampul    String   // path ke image file
+  sampul    String  
   kategori  Kategori
   tags      Tag[]
   chapters  Chapter[]

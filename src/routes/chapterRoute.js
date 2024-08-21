@@ -14,6 +14,6 @@ router.get('/stories/:storyId/chapters', getAllChaptersController);
 router.get('/chapters/:id', getChapterByIdController);
 router.put('/chapters/:id', updateChapterController);
 router.delete('/chapters/:id', deleteChapterController);
-router.get('/stories/:storyId/chapters', getChaptersByStoryIdController); // Tambahkan route baru
+router.get('/stories/:storyId/chapters', getChaptersByStoryIdController); 
 
 module.exports = router;
