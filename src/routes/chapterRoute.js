@@ -12,8 +12,8 @@ const {
 router.post('/stories/:storyId/chapters', createChapterController);
 router.get('/stories/:storyId/chapters', getAllChaptersController);
 router.get('/chapters/:id', getChapterByIdController);
-router.put('/chapters/:id', updateChapterController);
-router.delete('/chapters/:id', deleteChapterController);
+router.put('/stories/:storyId/chapters/:id', updateChapterController);
+router.delete('/stories/:storyId/chapters/:id', deleteChapterController);
 router.get('/stories/:storyId/chapters', getChaptersByStoryIdController); 
 
 module.exports = router;
