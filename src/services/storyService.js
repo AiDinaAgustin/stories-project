@@ -123,6 +123,11 @@ const updateStory = async (id, data, file) => {
 
 const deleteStory = async (id) => {
   try {
+
+    await prisma.chapter.deleteMany({
+      where: { storyId: parseInt(id) },
+    });
+    
     await prisma.tag.deleteMany({
       where: { storyId: parseInt(id) },
     });
