@@ -25,6 +25,9 @@ const getChapterById = async (id) => {
 const getAllChapters = async (storyId) => {
   const chapters = await prisma.chapter.findMany({
     where: { storyId: parseInt(storyId) },
+    orderBy: {
+      createdAt: 'desc', 
+    },
   });
   return chapters;
 };
@@ -59,6 +62,9 @@ const getChaptersByStoryId = async (storyId) => {
     try {
       const chapters = await prisma.chapter.findMany({
         where: { storyId: parseInt(storyId) },
+        orderBy: {
+          createdAt: 'desc', 
+        },
       });
       return chapters;
     } catch (error) {

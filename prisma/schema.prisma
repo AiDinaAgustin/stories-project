@@ -17,6 +17,8 @@ model Story {
   tags      Tag[]
   chapters  Chapter[]
   status    Status
+  createdAt DateTime @default(now()) 
+  updatedAt DateTime @updatedAt
 }
 
 model Tag {
@@ -43,4 +45,6 @@ model Chapter {
   story          String
   storyId        Int
   storyRelation  Story  @relation(fields: [storyId], references: [id])
+  createdAt DateTime @default(now()) 
+  updatedAt DateTime @updatedAt
 }

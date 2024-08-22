@@ -61,6 +61,9 @@ const getAllStories = async (filters) => {
       ...(status && { status }),
     },
     include: { tags: true },
+    orderBy: {
+      createdAt: 'desc', 
+    },
   });
   return stories;
 };
