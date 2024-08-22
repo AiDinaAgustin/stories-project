@@ -52,12 +52,19 @@ const updateStoryController = async (req, res) => {
 const deleteStoryController = async (req, res) => {
   try {
     const id = req.params.id;
-    const result = await deleteStory(id);
+    const storyId = parseInt(id);
+    if (isNaN(storyId)) {
+      return res.status(400).json({ error: 'Invalid story ID' });
+    }
+
+    const result = await deleteStory(storyId);
     res.status(200).json(result);
   } catch (error) {
+    console.error('Error deleting story:', error);
     res.status(500).json({ error: error.message });
   }
 };
+
 
 module.exports = {
   createStoryController,
